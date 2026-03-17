@@ -1,10 +1,9 @@
-import { getDB } from "@/libs/db";
+import { getDB } from "@/lib/db";
 
-// GET - fetch all users
 export async function GET() {
   try {
     const db = await getDB();
-    const [rows] = await db.query("SELECT * FROM users");
+    const [rows] = await db.query("SELECT id, name, phone, created_at FROM users");
     return Response.json(rows);
   } catch (error) {
     console.error(error);
@@ -12,19 +11,18 @@ export async function GET() {
   }
 }
 
-// POST - insert a new user
 export async function POST(req) {
   try {
-    const { name, email, password } = await req.json();
+    const { name, phone, password } = await req.json();
 
-    if (!name || !email || !password) {
-      return Response.json({ error: "name, email, and password are required" }, { status: 400 });
+    if (!name || !phone || !password) {
+      return Response.json({ error: "name, phone, and password are required" }, { status: 400 });
     }
 
     const db = await getDB();
     await db.query(
-      "INSERT INTO users (name, email, password) VALUES (?, ?, ?)",
-      [name, email, password]
+      "INSERT INTO users (name, phone, password) VALUES (?, ?, ?)",
+      [name, phone, password]
     );
 
     return Response.json({ message: "User added successfully" }, { status: 201 });
