@@ -1,8 +1,13 @@
 "use client";
 
 import Link from "next/link";
+<<<<<<< HEAD
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+=======
+import Image from "next/image";
+import { useEffect, useMemo, useState } from "react";
+>>>>>>> 9b91331b6a45af289b467592cab5a410a01c2954
 import { HERO_SLIDES, type HeroSlide } from "@/lib/homeContent";
 
 function clampIndex(next: number, len: number) {
@@ -63,9 +68,9 @@ export function HeroSlider({
   };
 
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 pt-10">
-      <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-linear-to-br from-slate-950 via-slate-950 to-sky-950">
-        <div className="pointer-events-none absolute inset-0 opacity-70 [background:radial-gradient(900px_circle_at_20%_20%,rgba(56,189,248,0.20),transparent_45%),radial-gradient(800px_circle_at_80%_40%,rgba(99,102,241,0.18),transparent_55%),radial-gradient(700px_circle_at_40%_90%,rgba(14,165,233,0.14),transparent_55%)]" />
+    <section className="w-full px-4 pt-10 md:px-6">
+      <div className="relative overflow-hidden rounded-3xl border border-sky-200/70 bg-linear-to-br from-white via-sky-50 to-cyan-50 shadow-[0_16px_45px_-28px_rgba(14,165,233,0.45)]">
+        <div className="pointer-events-none absolute inset-0 opacity-80 [background:radial-gradient(900px_circle_at_20%_20%,rgba(56,189,248,0.18),transparent_45%),radial-gradient(800px_circle_at_80%_40%,rgba(99,102,241,0.12),transparent_55%),radial-gradient(700px_circle_at_40%_90%,rgba(14,165,233,0.10),transparent_55%)]" />
 
         {data.length > 1 ? (
           <>
@@ -73,7 +78,7 @@ export function HeroSlider({
               type="button"
               aria-label="Previous slide"
               onClick={goPrev}
-              className="absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full border border-white/10 bg-slate-950/40 p-2 text-white/80 backdrop-blur hover:bg-white/10 hover:text-white"
+              className="absolute left-4 top-1/2 z-10 -translate-y-1/2 p-2 text-slate-500 hover:text-slate-900"
             >
               <IconChevron className="h-5 w-5" />
             </button>
@@ -81,13 +86,14 @@ export function HeroSlider({
               type="button"
               aria-label="Next slide"
               onClick={goNext}
-              className="absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full border border-white/10 bg-slate-950/40 p-2 text-white/80 backdrop-blur hover:bg-white/10 hover:text-white"
+              className="absolute right-4 top-1/2 z-10 -translate-y-1/2 p-2 text-slate-500 hover:text-slate-900"
             >
               <IconChevron className="h-5 w-5 rotate-180" />
             </button>
           </>
         ) : null}
 
+<<<<<<< HEAD
         <div className="relative grid min-h-[420px] gap-8 p-8 md:grid-cols-[1.2fr_0.8fr] md:min-h-[440px] md:p-12">
           <div className="flex flex-col justify-center gap-4 overflow-hidden">
             <AnimatePresence mode="wait" custom={direction}>
@@ -102,13 +108,18 @@ export function HeroSlider({
                 className="flex flex-col gap-4"
               >
             <div className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-sky-200">
+=======
+        <div className="relative grid gap-8 p-8 md:grid-cols-[1.1fr_0.9fr] md:p-12">
+          <div className="flex flex-col justify-center gap-4">
+            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-sky-700">
+>>>>>>> 9b91331b6a45af289b467592cab5a410a01c2954
               <span className="h-2 w-2 rounded-full bg-sky-400" />
               {active.eyebrow}
             </div>
-            <h1 className="text-balance text-3xl font-semibold leading-tight tracking-tight text-white md:text-5xl">
+            <h1 className="text-balance text-3xl font-semibold leading-tight tracking-tight text-slate-900 md:text-5xl">
               {active.title}
             </h1>
-            <p className="max-w-xl text-pretty text-base leading-7 text-white/70 md:text-lg">
+            <p className="max-w-xl text-pretty text-base leading-7 text-slate-600 md:text-lg">
               {active.description}
             </p>
 
@@ -121,7 +132,7 @@ export function HeroSlider({
               </Link>
               <Link
                 href="/credit-score"
-                className="rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white/90 hover:bg-white/10"
+                className="rounded-full border border-sky-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 hover:bg-sky-50"
               >
                 Check credit score
               </Link>
@@ -131,38 +142,26 @@ export function HeroSlider({
           </div>
 
           <div className="flex flex-col justify-center gap-4">
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-              <div className="text-sm font-semibold text-white">Quick actions</div>
-              <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
-                <Link
-                  href="/loans"
-                  className="rounded-2xl border border-white/10 bg-slate-950/30 px-4 py-3 text-white/85 hover:bg-white/5"
-                >
-                  Compare loans
-                </Link>
-                <Link
-                  href="/insurance"
-                  className="rounded-2xl border border-white/10 bg-slate-950/30 px-4 py-3 text-white/85 hover:bg-white/5"
-                >
-                  Compare insurance
-                </Link>
-                <Link
-                  href="/contact-us"
-                  className="rounded-2xl border border-white/10 bg-slate-950/30 px-4 py-3 text-white/85 hover:bg-white/5"
-                >
-                  Talk to an expert
-                </Link>
-                <Link
-                  href="/about-us"
-                  className="rounded-2xl border border-white/10 bg-slate-950/30 px-4 py-3 text-white/85 hover:bg-white/5"
-                >
-                  Why CapitalCare
-                </Link>
+            <div className="overflow-hidden rounded-3xl border border-sky-100 bg-white/90 p-4">
+              <div className="relative h-52 overflow-hidden rounded-2xl bg-slate-100 md:h-72">
+                <Image
+                  src={active.image}
+                  alt={active.imageAlt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 38vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              <div className="mt-3 flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-600">
+                <span className="rounded-full border border-slate-200 bg-white px-3 py-1">Secure</span>
+                <span className="rounded-full border border-slate-200 bg-white px-3 py-1">Fast approval</span>
+                <span className="rounded-full border border-slate-200 bg-white px-3 py-1">Trusted partners</span>
               </div>
             </div>
 
-            <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
-              <div className="text-xs font-medium text-white/70">
+            <div className="flex items-center justify-between rounded-2xl border border-sky-100 bg-white/80 px-4 py-3">
+              <div className="text-xs font-medium text-slate-500">
                 Slide {Math.min(index + 1, data.length)} of {data.length}
               </div>
               <div className="flex items-center gap-2">
@@ -177,7 +176,7 @@ export function HeroSlider({
                     }}
                     className={[
                       "h-2.5 w-2.5 rounded-full transition",
-                      i === index ? "bg-sky-400" : "bg-white/20 hover:bg-white/35",
+                      i === index ? "bg-sky-400" : "bg-slate-300 hover:bg-slate-400",
                     ].join(" ")}
                   />
                 ))}
