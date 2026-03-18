@@ -8,7 +8,7 @@ export async function POST(req: NextRequest) {
 
     if (!fullName || !phone || !password) {
       return NextResponse.json(
-        { error: "Full name, phone, and password are required" },
+        { error: "fullName, phone, and password are required" },
         { status: 400 }
       );
     }
@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const db = await getDB();
+    const db = getDB();
 
     const [existing] = await db.query(
       "SELECT id FROM users WHERE phone = ?",
@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     await db.query(
-      "INSERT INTO users (name, phone, password) VALUES (?, ?, ?)",
+      "INSERT INTO users (fullName, phone, password) VALUES (?, ?, ?)",
       [fullName, phone, hashedPassword]
     );
 
@@ -53,7 +53,7 @@ export async function POST(req: NextRequest) {
       { status: 201 }
     );
   } catch (error) {
-    console.error("[signup]", error);
+    console.error("[POST /api/signup]", error);
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }

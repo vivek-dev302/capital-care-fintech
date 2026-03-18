@@ -1,16 +1,19 @@
 import mysql from "mysql2/promise";
 
-let connection = null;
+let pool = null;
 
-export async function getDB() {
-    if (connection) return connection;
+export function getDB() {
+  if (pool) return pool;
 
-    connection = await mysql.createConnection({
-        host: "localhost",
-        user: "root",
-        password: "root123",
-        database: "mymudra_db",
-    });
+  pool = mysql.createPool({
+    host: "localhost",
+    user: "root",
+    password: "arsh032206",
+    database: "capitalcare_db",
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0,
+  });
 
-    return connection;
+  return pool;
 }

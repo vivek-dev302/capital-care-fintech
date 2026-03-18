@@ -13,12 +13,12 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const db = await getDB();
+    const db = getDB();
 
     const [rows] = await db.query(
-      "SELECT id, name, phone, password FROM users WHERE phone = ?",
+      "SELECT id, fullName, phone, password FROM users WHERE phone = ?",
       [phone]
-    ) as [Array<{ id: number; name: string; phone: string; password: string }>, unknown];
+    ) as [Array<{ id: number; fullName: string; phone: string; password: string }>, unknown];
 
     if (rows.length === 0) {
       return NextResponse.json(
@@ -39,10 +39,10 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({
       message: "Signed in successfully",
-      user: { id: user.id, name: user.name, phone: user.phone },
+      user: { id: user.id, name: user.fullName, phone: user.phone },
     });
   } catch (error) {
-    console.error("[signin]", error);
+    console.error("[POST /api/signin]", error);
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }
