@@ -110,7 +110,7 @@ export function HeroSlider({
                   alt={active.imageAlt}
                   fill
                   sizes="(max-width: 768px) 100vw, 38vw"
-                  className="object-cover"
+                  className="object-full"
                   priority
                 />
               </div>
