@@ -94,13 +94,13 @@ export function Navbar() {
       ref={(el) => {
         rootRef.current = el;
       }}
-      className="sticky top-0 z-40 border-b border-white/10 bg-slate-950/60 backdrop-blur"
+      className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/80 backdrop-blur"
     >
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4">
         <div className="flex items-center gap-2">
           <Link
             href="/"
-            className="flex items-center gap-2 rounded-xl px-2 py-1 text-sm font-semibold tracking-tight text-white hover:bg-white/5"
+            className="flex items-center gap-2 rounded-xl px-2 py-1 text-sm font-semibold tracking-tight text-slate-900 hover:bg-slate-100"
           >
             <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-linear-to-br from-sky-400 to-indigo-500 text-slate-950">
               CC
@@ -124,7 +124,7 @@ export function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="rounded-full px-4 py-2 text-sm font-medium text-white/90 hover:bg-white/5 hover:text-white"
+                  className="rounded-full px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900"
                 >
                   {item.label}
                 </Link>
@@ -136,7 +136,7 @@ export function Navbar() {
               <div key={item.label} className="relative">
                 <button
                   type="button"
-                  className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium text-white/90 hover:bg-white/5 hover:text-white"
+                  className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900"
                   aria-haspopup="menu"
                   aria-expanded={open}
                   onClick={() =>
@@ -147,7 +147,7 @@ export function Navbar() {
                   <IconChevronDown
                     className={[
                       "h-4 w-4 transition-transform",
-                      open ? "rotate-180 text-white" : "text-white/70",
+                      open ? "rotate-180 text-slate-900" : "text-slate-500",
                     ].join(" ")}
                   />
                 </button>
@@ -155,7 +155,7 @@ export function Navbar() {
                 {open ? (
                   <div
                     role="menu"
-                    className="absolute left-0 mt-2 w-60 overflow-hidden rounded-2xl border border-white/10 bg-slate-950/95 shadow-xl shadow-sky-500/10"
+                    className="absolute left-0 mt-2 w-60 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl shadow-sky-500/10"
                   >
                     <div className="p-2">
                       {item.items.map((sub) => (
@@ -164,7 +164,7 @@ export function Navbar() {
                           href={sub.href}
                           role="menuitem"
                           onClick={() => setOpenLabel(null)}
-                          className="block rounded-xl px-3 py-2 text-sm text-white/85 hover:bg-white/5 hover:text-white"
+                          className="block rounded-xl px-3 py-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900"
                         >
                           {sub.label}
                         </Link>
@@ -188,7 +188,7 @@ export function Navbar() {
 
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/85 hover:bg-white/10 hover:text-white md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-100 hover:text-slate-900 md:hidden"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((v) => !v)}
@@ -209,7 +209,7 @@ export function Navbar() {
               <>
                 <Link
                   href="/sign-in"
-                  className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white/90 hover:bg-white/10"
+                  className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100"
                 >
                   Sign in
                 </Link>
@@ -226,7 +226,7 @@ export function Navbar() {
       </div>
 
       {mobileOpen ? (
-        <div className="border-t border-white/10 bg-slate-950/75 backdrop-blur md:hidden">
+        <div className="border-t border-slate-200 bg-white/90 backdrop-blur md:hidden">
           <div className="mx-auto w-full max-w-6xl px-4 py-4">
             <div className="grid gap-2">
               {items.map((item) => {
@@ -236,7 +236,7 @@ export function Navbar() {
                       key={item.label}
                       href={item.href}
                       onClick={() => setMobileOpen(false)}
-                      className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white/90 hover:bg-white/10"
+                      className="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100"
                     >
                       {item.label}
                     </Link>
@@ -246,11 +246,11 @@ export function Navbar() {
                 return (
                   <details
                     key={item.label}
-                    className="group overflow-hidden rounded-2xl border border-white/10 bg-white/5"
+                    className="group overflow-hidden rounded-2xl border border-slate-200 bg-white"
                   >
-                    <summary className="flex cursor-pointer list-none items-center justify-between px-4 py-3 text-sm font-semibold text-white/90 hover:bg-white/10">
+                    <summary className="flex cursor-pointer list-none items-center justify-between px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-100">
                       <span>{item.label}</span>
-                      <IconChevronDown className="h-4 w-4 text-white/70 transition-transform group-open:rotate-180" />
+                      <IconChevronDown className="h-4 w-4 text-slate-500 transition-transform group-open:rotate-180" />
                     </summary>
                     <div className="grid gap-1 px-2 pb-2">
                       {item.items.map((sub) => (
@@ -258,7 +258,7 @@ export function Navbar() {
                           key={sub.label}
                           href={sub.href}
                           onClick={() => setMobileOpen(false)}
-                          className="rounded-xl px-3 py-2 text-sm font-medium text-white/80 hover:bg-white/10 hover:text-white"
+                          className="rounded-xl px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-slate-900"
                         >
                           {sub.label}
                         </Link>
@@ -268,7 +268,7 @@ export function Navbar() {
                 );
               })}
 
-              <div className="mt-2 rounded-2xl border border-white/10 bg-white/5 p-2">
+              <div className="mt-2 rounded-2xl border border-slate-200 bg-white p-2">
                 {signedIn ? (
                   <button
                     type="button"
@@ -285,7 +285,7 @@ export function Navbar() {
                     <Link
                       href="/sign-in"
                       onClick={() => setMobileOpen(false)}
-                      className="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-center text-sm font-semibold text-white/90 hover:bg-white/10"
+                      className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-center text-sm font-semibold text-slate-700 hover:bg-slate-100"
                     >
                       Sign in
                     </Link>

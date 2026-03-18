@@ -2,13 +2,13 @@ import { PARTNERS } from "@/lib/homeContent";
 
 export function Partners() {
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 pt-16">
-      <div className="rounded-3xl border border-white/10 bg-white/5 p-8 md:p-10">
+    <section className="w-full px-4 pt-16 md:px-6">
+      <div className="rounded-3xl border border-slate-200 bg-white/80 p-8 shadow-sm md:p-10">
         <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
-          <h2 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
+          <h2 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
             Partners
           </h2>
-          <div className="text-sm font-medium text-white/60">
+          <div className="text-sm font-medium text-slate-500">
             Placeholder list — swap with real partner logos later.
           </div>
         </div>
@@ -17,7 +17,7 @@ export function Partners() {
           {PARTNERS.map((p) => (
             <div
               key={p.name}
-              className="flex items-center justify-center rounded-2xl border border-white/10 bg-slate-950/30 px-4 py-5 text-center text-sm font-semibold text-white/80"
+              className="flex items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 px-4 py-5 text-center text-sm font-semibold text-slate-700"
             >
               {p.name}
             </div>
