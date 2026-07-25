@@ -369,7 +369,7 @@ export default function ContactUsPage() {
           >
             <iframe
               title="CapitalCare Office Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.4!2d77.3040573!3d28.3904482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdd0073eb11f9%3A0x3c5b0a29d6df7fa9!2sOm%20Shubham%20Tower!5e0!3m2!1sen!2sin!4v1680000000000"
+              src="https://www.google.com/maps/place/Varun+Tower,+Sec+20B,+Neelam+Flyover,+Krishna+Nagar,+New+Industrial+Township,+Faridabad,+Haryana+121007/@28.3922882,77.3102716,322m/data=!3m1!1e3!4m10!1m2!2m1!1sTF-12,+Third+Floor+Varun+Tower+Sector+20%D0%92,+Mathura+Road!3m6!1s0x390cdc486e3de81f:0xd5c53cbef441bfdd!8m2!3d28.3921058!4d77.3113417!15sCjhURi0xMiwgVGhpcmQgRmxvb3IgVmFydW4gVG93ZXIgU2VjdG9yIDIw0JIsIE1hdGh1cmEgUm9hZJIBEWNvbXBvdW5kX2J1aWxkaW5n4AEA!16s%2Fg%2F12hv2lbjg?entry=ttu&g_ep=EgoyMDI2MDcyMi4wIKXMDSoASAFQAw%3D%3D"
               // src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.4!2d77.3040573!3d28.3904482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdd0073eb11f9%3A0x3c5b0a29d6df7fa9!2sOm%20Shubham%20Tower!5e0!3m2!1sen!2sin!4v1680000000000"
               width="100%"
               height="320"

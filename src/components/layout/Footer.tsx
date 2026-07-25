@@ -115,7 +115,7 @@ export function Footer() {
               Capital Care Group,
               {/* Capital Care Fintech Private Limited, */}
               <br />
-              Office No. 437, 4th Floor Shubham Tower, Neelam Chowk,
+              TF-12, Third Floor Varun Tower Sector 20В,Mathura Road
               <br />
               Faridabad, Haryana.
             </p>
